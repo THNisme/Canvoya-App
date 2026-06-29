@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import localFont from "next/font/local";
 import '@/styles/global.css';
 import NavHeader from '@/components/NavHeader';
+import Footer from '@/components/Footer';
 
 const gesco = localFont({
   src: "../../public/fonts/1FTV-HF-Gesco.ttf",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         <NavHeader/>
         {children}  
+        <Footer/>
       </body>
     </html>
   );
