@@ -22,7 +22,7 @@ export default function ProductSection() {
 
                         <p className={styles.description}>
                             Dear Tho is more than a collection of photos and facts
-                            — it's a personal keepsake for your travel memories,
+                            — it is a personal keepsake for your travel memories,
                             designed to create a deeply interactive experience.
                         </p>
 
