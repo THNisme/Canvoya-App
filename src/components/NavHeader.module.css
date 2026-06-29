@@ -1,0 +1,53 @@
+@font-face {
+  font-family: '1FTV HF Gesco';
+  src: url('../../public/fonts/1FTV-HF-Gesco.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--color-cream);
+}
+
+.logo:hover {
+    color: var(--color-cream);
+}
+
+.navbar {
+    background-color: #5a4434ee;
+    color: var(--color-cream);
+    backdrop-filter: blur(10px);
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 20px;
+}
+
+.navLink {
+    color: var(--color-cream);
+    font-weight: var(--weight-semibold);
+}
+
+.navTranslate {
+    color:  var(--color-sand);
+    font-size: var(--text-xs);
+    text-decoration: none;
+}
+
+.navBuyBtn {
+    background-color: var(--color-ochre);
+    color: var(--color-cream);
+    font-weight: var(--weight-semibold);
+    border: 0;
+}
+
+.navBuyBtn:hover {
+    color: var(--color-cream);
+    background-color: var(--color-terracotta);
+}
+
+.navTranslate:hover,
+.navLink:hover {
+    color: var(--color-primary);
+}
