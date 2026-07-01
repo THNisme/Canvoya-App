@@ -6,7 +6,7 @@ import {
     Nav,
     Button,
 } from "react-bootstrap";
-
+import { HiShoppingBag } from "react-icons/hi2";
 import styles from '@/components/NavHeader.module.css';
 
 function NavHeader() {
@@ -35,7 +35,10 @@ function NavHeader() {
                     </Nav>
 
                     <div className="d-flex align-items-center">
-                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="/buy">MUA NGAY</Button>
+                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="/buy">
+                            <span>MUA NGAY</span>
+                            <span><HiShoppingBag/></span>
+                        </Button>
                     </div>
 
                 </Navbar.Collapse>
