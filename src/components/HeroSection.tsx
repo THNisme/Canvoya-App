@@ -4,7 +4,7 @@ import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   return (
-    <section className={styles.hero}>
+    <section id="_hero" className={styles.hero}>
 
       {/* Overlay */}
       <div className={styles.overlay}></div>

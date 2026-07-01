@@ -12,6 +12,7 @@
     color: var(--color-cream);
 }
 
+.logo:focus,
 .logo:hover {
     color: var(--color-cream);
 }
@@ -26,6 +27,10 @@
 .navLink {
     color: var(--color-cream);
     font-weight: var(--weight-semibold);
+}
+
+.navbar {
+    --bs-navbar-active-color: var(--color-ochre);
 }
 
 .navTranslate {
@@ -49,4 +54,13 @@
 .navTranslate:hover,
 .navLink:hover {
     color: var(--color-primary);
+}
+
+:global(.navbar-toggler) {
+  border: none;
+  box-shadow: none;
+}
+
+:global(.navbar-toggler:focus) {
+  box-shadow: none;
 }

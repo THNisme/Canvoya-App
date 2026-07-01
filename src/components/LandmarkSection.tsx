@@ -42,7 +42,7 @@ const landmarks = [
 
 export default function LandmarkSection() {
     return (
-        <section className={styles.section}>
+        <section id="_destination" className={styles.section}>
             <Container>
 
                 <div className="text-center mb-5">

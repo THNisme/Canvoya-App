@@ -5,7 +5,7 @@ import BookViewer from "./3D/BookViewer";
 
 export default function ProductSection() {
     return (
-        <section className={styles.section}>
+        <section id="_product" className={styles.section}>
             <Container>
 
                 <Row className="align-items-center g-5">
