@@ -28,14 +28,14 @@ function NavHeader() {
                 <Navbar.Collapse id="main-navbar">
 
                     <Nav className="mx-auto gap-4">
-                        <Nav.Link className={styles.navLink} as={Link} href="#_hero">HOME</Nav.Link>
-                        <Nav.Link className={styles.navLink} as={Link} href="#_product">THE BOOK</Nav.Link>
-                        <Nav.Link className={styles.navLink} as={Link} href="#_destination">DESTINATION</Nav.Link>
-                        <Nav.Link className={styles.navLink}>BLOG</Nav.Link>
+                        <Nav.Link className={styles.navLink} as={Link} href="/#_hero">HOME</Nav.Link>
+                        <Nav.Link className={styles.navLink} as={Link} href="/#_product">THE BOOK</Nav.Link>
+                        <Nav.Link className={styles.navLink} as={Link} href="/#_destination">DESTINATION</Nav.Link>
+                        <Nav.Link className={styles.navLink} as={Link} href="/blog">BLOG</Nav.Link>
                     </Nav>
 
                     <div className="d-flex align-items-center">
-                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`}>MUA NGAY</Button>
+                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="/buy">MUA NGAY</Button>
                     </div>
 
                 </Navbar.Collapse>
