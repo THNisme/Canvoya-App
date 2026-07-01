@@ -1,6 +1,7 @@
 'use client'
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "./ProductSection.module.css";
+import BookViewer from "./3D/BookViewer";
 
 export default function ProductSection() {
     return (
@@ -93,7 +94,7 @@ export default function ProductSection() {
                     {/* Hình ảnh */}
                     <Col lg={6}>
                         <div className={styles.bookPreview}>
-                            Dear Tho
+                            <BookViewer/>
                         </div>
                     </Col>
 
