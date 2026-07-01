@@ -1,6 +1,7 @@
 "use client";
-import * as THREE from "three";
+"use client";
 import { useMemo } from "react";
+import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
 
 interface PageProps {
@@ -11,19 +12,41 @@ export default function Page({
     position = [0, 0, 0]
 }: PageProps) {
 
-    const texture = useTexture("/textures/page-filled.jpg");
+    const frontTexture = useTexture("/textures/page-filled.jpg");
+    const backTexture = useTexture("/textures/page-blank.jpg")
 
     const geometry = useMemo(()=>{
-        const geo = new THREE.BoxGeometry(2,3,0.02);
+        const geo = new THREE.PlaneGeometry(2, 3, 40, 40);
         geo.translate(1,0,0);
         return geo; 
     },[]);
 
     return (
 
-        <mesh position={position} geometry={geometry}>
-            <meshStandardMaterial map={texture}/>
-        </mesh>
+        <group position={position}>
+
+            <mesh
+                geometry={geometry}
+                position={[0,0,0.001]}
+            >
+                <meshStandardMaterial
+                    map={frontTexture}
+                    side={THREE.FrontSide}
+                />
+            </mesh>
+
+            <mesh
+                geometry={geometry}
+                position={[0,0,-0.001]}
+                rotation={[0,0,0]}
+            >
+                <meshStandardMaterial
+                    map={backTexture}
+                    side={THREE.BackSide}
+                />
+            </mesh>
+
+        </group>
 
     );
 
