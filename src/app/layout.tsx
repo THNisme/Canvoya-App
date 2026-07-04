@@ -2,8 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import '@/styles/global.css';
-import NavHeader from '@/components/NavHeader';
-import Footer from '@/components/Footer';
+import NavHeader from '@/components/NavHeader/NavHeader';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: "CANVOYA",

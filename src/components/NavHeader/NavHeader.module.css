@@ -1,6 +1,6 @@
 @font-face {
   font-family: '1FTV HF Gesco';
-  src: url('../../public/fonts/1FTV-HF-Gesco.ttf') format('truetype');
+  src: url('../../../public/fonts/1FTV-HF-Gesco.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

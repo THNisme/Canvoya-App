@@ -1,7 +1,7 @@
 'use client'
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "./ProductSection.module.css";
-import BookViewer from "./3D/BookViewer";
+import BookViewer from "../3D/BookViewer";
 
 export default function ProductSection() {
     return (

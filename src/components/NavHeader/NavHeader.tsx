@@ -7,7 +7,7 @@ import {
     Button,
 } from "react-bootstrap";
 import { HiShoppingBag } from "react-icons/hi2";
-import styles from '@/components/NavHeader.module.css';
+import styles from './NavHeader.module.css';
 
 function NavHeader() {
     return (
