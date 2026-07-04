@@ -40,6 +40,11 @@
     line-height: 1.2;
     margin-bottom: 24px;
     transition: color 0.3s ease;
+    /* Chỉ hiện 2 dòng */
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .heroTitle:hover {
@@ -70,4 +75,27 @@
 .blogHero :global(.carousel-control-prev),
 .blogHero :global(.carousel-control-next) {
     display: none;
+}
+
+.blogHero :global(.carousel-indicators) {
+    bottom: -60px;
+}
+
+@media (max-width: 768px) {
+    .blogCarouselItem {
+        min-height: 50vh;
+    }
+
+    .heroImage {
+        display: none;
+    }
+
+    .heroTitle,
+    .heroDescription {
+        /* Chỉ hiện 3 dòng */
+        display:-webkit-box;
+        -webkit-line-clamp:3;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+    }
 }

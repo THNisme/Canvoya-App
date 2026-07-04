@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from 'react-bootstrap';
 import styles from './BlogPage.module.css';
+import BlogHeroSection from "@/components/BlogHeroSection/BlogHeroSection";
 import BlogHeroSlider from "@/components/BlogHeroSlider/BlogHeroSlider";
 import BlogSlider from "@/components/BlogSlider/BlogSlider";
 
@@ -53,6 +54,7 @@ const Blog = () => {
   ];
   return(
     <>
+        <BlogHeroSection/>
         <BlogHeroSlider blogs={blogs}/>
         <BlogSlider blogs={blogs}/>
     </> 

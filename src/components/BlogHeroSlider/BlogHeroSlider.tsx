@@ -10,8 +10,8 @@ export default function BlogHeroSlider({ blogs }) {
             <Container>
                 <Carousel>
                 {blogs.map((blog) => (
-                    <Carousel.Item key={blog.id}>
-                        <Row className="align-items-center g-5">
+                    <Carousel.Item key={blog.id} className={styles.blogCarouselItem}>
+                        <Row className="align-items-center">
 
                             <Col lg={7}>
                                 <div className={styles.heroImageWrapper}>

@@ -43,7 +43,7 @@
     line-height:1.6;
     color:#666;
 
-    /* Chỉ hiện 3 dòng */
+    /* Chỉ hiện 1 dòng */
     display:-webkit-box;
     -webkit-line-clamp:1;
     -webkit-box-orient:vertical;
