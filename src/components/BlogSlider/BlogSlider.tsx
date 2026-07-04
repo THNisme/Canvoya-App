@@ -14,8 +14,9 @@ import styles from "./BlogSlider.module.css"
 
 export default function BlogSlider({ blogs }) {
     return (
-        <Container>
+        <Container >
             <Swiper
+                className={styles.blogSlider}
                 modules={[ Pagination, Autoplay]}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000 }}
@@ -55,7 +56,7 @@ export default function BlogSlider({ blogs }) {
                                     {blog.category}
                                 </small>
 
-                                <Card.Text>
+                                <Card.Text className={styles.cardDescription}>
                                     {blog.description}
                                 </Card.Text>
                             </Card.Body>
