@@ -35,7 +35,7 @@ function NavHeader() {
                     </Nav>
 
                     <div className="d-flex align-items-center">
-                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="/cart">
+                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="https://forms.gle/LT9nve8Lb1GaCmS76">
                             <span>MUA NGAY</span>
                             <span><HiShoppingBag/></span>
                         </Button>
