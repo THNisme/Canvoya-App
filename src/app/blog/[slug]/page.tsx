@@ -2,6 +2,7 @@ import { blogs } from "@/data/blogs";
 import styles from "./BlogDetailPage.module.css"
 import BlogDetailHeading from "@/components/BlogDetailHeading/BlogDetailHeading";
 import { Container } from "react-bootstrap";
+import BlogSlider from "@/components/BlogSlider/BlogSlider";
 
 type Props = {
     params: Promise<{
@@ -29,6 +30,7 @@ export default async function BlogDetail({ params }: Props) {
                         __html: blog.content
                     }}
                 />
+                <BlogSlider blogs={blogs} />
             </Container>
         </>
     );
