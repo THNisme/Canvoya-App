@@ -24,6 +24,8 @@
     transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+
 .navLink {
     color: var(--color-cream);
     font-weight: var(--weight-semibold);
@@ -55,6 +57,11 @@
 .navBuyBtn:hover {
     color: var(--color-cream);
     background-color: var(--color-terracotta);
+}
+
+.navBuyBtn:active {
+    color: var(--color-cream);
+    background-color: var(--color-terracotta) !important;
 }
 
 .navTranslate:hover,
