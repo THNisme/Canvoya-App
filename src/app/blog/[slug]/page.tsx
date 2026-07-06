@@ -1,6 +1,7 @@
 import { blogs } from "@/data/blogs";
 import styles from "./BlogDetailPage.module.css"
 import BlogDetailHeading from "@/components/BlogDetailHeading/BlogDetailHeading";
+import { Container } from "react-bootstrap";
 
 type Props = {
     params: Promise<{
@@ -21,12 +22,14 @@ export default async function BlogDetail({ params }: Props) {
     return (
         <>  
             <BlogDetailHeading blog={blog}/>
-            <div
-                className={styles.article}
-                dangerouslySetInnerHTML={{
-                    __html: blog.content
-                }}
-            />
+            <Container>
+                <div
+                    className={styles.article}
+                    dangerouslySetInnerHTML={{
+                        __html: blog.content
+                    }}
+                />
+            </Container>
         </>
     );
 }

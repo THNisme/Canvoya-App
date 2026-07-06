@@ -1,5 +1,9 @@
-.blogSlider {
+.blogSliderContainer {
     padding: var(--section-gap) 0;
+}
+
+.blogSlider {
+    padding-bottom: var(--section-gap);
 }
 
 .blogCard{
@@ -53,4 +57,32 @@
 .blogCard:hover{
     transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,0,0,.15)!important;
+}
+
+.blogSlider {
+    --swiper-theme-color: var(--color-primary);
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--color-chocolate);
+    margin-bottom: 10px;
+}
+
+.description {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    font-style: italic;
+    color: var(--color-text-muted);
 }

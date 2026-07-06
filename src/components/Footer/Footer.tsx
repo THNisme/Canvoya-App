@@ -56,7 +56,7 @@ const Footer = () => {
                 Liên hệ
               </Nav.Link>
 
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link href="https://www.facebook.com/canvoya" className={styles.link}>
                 Facebook
               </Nav.Link>
 
