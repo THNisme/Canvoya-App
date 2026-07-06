@@ -1,0 +1,64 @@
+.article {
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.9;
+    color: #444;
+}
+
+.article h2 {
+    margin: 3rem 0 1rem;
+    color: #2f2f2f;
+    font-weight: 700;
+}
+
+.article h3 {
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+}
+
+.article p {
+    margin-bottom: 1.25rem;
+}
+
+.article img {
+    width: 100%;
+    border-radius: 16px;
+    margin: 1rem 0;
+}
+
+.article figure {
+    margin: 2rem 0;
+}
+
+.article figcaption {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: .5rem;
+}
+
+.article ul,
+.article ol {
+    margin: 1rem 0 1rem 1.5rem;
+}
+
+.article li {
+    margin-bottom: .5rem;
+}
+
+.article blockquote {
+    border-left: 5px solid #c79a63;
+    background: #faf6f0;
+    padding: 1.25rem;
+    margin: 2rem 0;
+    font-style: italic;
+    border-radius: 0 12px 12px 0;
+}
+
+.article .tip-box {
+    background: #fff8e8;
+    border: 1px solid #ecd8a5;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+}
