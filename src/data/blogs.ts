@@ -1115,6 +1115,6 @@ export const blogs = [
             </p>
         `
     }
-];
+].reverse();
 
 //Sau này API trả dữ liệu thì chỉ cần thay file này.
