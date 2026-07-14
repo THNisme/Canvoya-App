@@ -2,9 +2,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./BlogDetailHeading.module.css";
 
-interface Blog { category: string; date: string; title: string; description: string; readTime: number }
-
-export default function BlogDetailHeading({blog}: { blog: Blog }) {
+export default function BlogDetailHeading({blog}) {
   return (
     <section id="_hero" className={styles.hero}>
 
