@@ -4,7 +4,9 @@ import { Carousel, Container, Row, Col, Badge } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./BlogHeroSlider.module.css";
 
-export default function BlogHeroSlider({ blogs }) {
+interface Blog { id: number; image: string; title: string; category: string; slug: string; description: string; readTime: number; date: string }
+
+export default function BlogHeroSlider({ blogs }: { blogs: Blog[] }) {
     return (
         <section className={styles.blogHero}>
             <Container>

@@ -12,7 +12,9 @@ import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
 import styles from "./BlogSlider.module.css"
 
-export default function BlogSlider({ blogs }) {
+interface Blog { id: number; image: string; title: string; category: string; slug: string; description: string }
+
+export default function BlogSlider({ blogs }: { blogs: Blog[] }) {
     return (
         <Container >
             <div className={styles.blogSliderContainer}>
