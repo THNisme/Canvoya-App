@@ -5,10 +5,14 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "./ProductSection.module.css";
 import BookViewer from "../3D/BookViewer";
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useLang } from '@/context/LanguageContext';
+import { strings } from '@/i18n/strings';
 
 export default function ProductSection() {
     const sectionRef = useRef<HTMLElement>(null);
     useScrollReveal(sectionRef, { start: 'top 75%' });
+    const { lang } = useLang();
+    const copy = strings.product;
 
     return (
         <section id="_product" className={styles.section} ref={sectionRef}>
@@ -20,23 +24,19 @@ export default function ProductSection() {
                     <Col lg={6}>
 
                         <p className={styles.subtitle} data-reveal>
-                            Về sản phẩm
+                            {copy.eyebrow[lang]}
                         </p>
 
                         <h2 className={styles.title} data-reveal>
-                            Hơn cả một cuốn sách
+                            {copy.title[lang]}
                         </h2>
 
                         <p className={styles.description} data-reveal>
-                            Dear Tho is more than a collection of photos and facts
-                            — it is a personal keepsake for your travel memories,
-                            designed to create a deeply interactive experience.
+                            {copy.description[lang]}
                         </p>
 
                         <p className={styles.highlight} data-reveal>
-                            Sách bao gồm hình ảnh đẹp, thông tin lịch sử, không gian
-                            viết nhật ký, túi nhựa trong để lưu ảnh cá nhân và các
-                            trò chơi tương tác.
+                            {copy.highlight[lang]}
                         </p>
 
                         <Row className="g-3" data-reveal>
@@ -45,7 +45,7 @@ export default function ProductSection() {
                                 <Card className={styles.infoCard}>
                                     <Card.Body>
                                         <small className={styles.cardLabel}>
-                                            Dimensions
+                                            {copy.dimensions[lang]}
                                         </small>
                                         <h5 className={styles.cardValue}>
                                             11.5 × 8.5 in
@@ -58,10 +58,10 @@ export default function ProductSection() {
                                 <Card className={styles.infoCard}>
                                     <Card.Body>
                                         <small className={styles.cardLabel}>
-                                            Pages
+                                            {copy.pages[lang]}
                                         </small>
                                         <h5 className={styles.cardValue}>
-                                            20 pages
+                                            {copy.pageCount[lang]}
                                         </h5>
                                     </Card.Body>
                                 </Card>
@@ -71,10 +71,10 @@ export default function ProductSection() {
                                 <Card className={styles.infoCard}>
                                     <Card.Body>
                                         <small className={styles.cardLabel}>
-                                            Style
+                                            {copy.style[lang]}
                                         </small>
                                         <h5 className={styles.cardValue}>
-                                            Vintage
+                                            {copy.vintage[lang]}
                                         </h5>
                                     </Card.Body>
                                 </Card>
@@ -84,7 +84,7 @@ export default function ProductSection() {
                                 <Card className={styles.infoCard}>
                                     <Card.Body>
                                         <small className={styles.cardLabel}>
-                                            Print
+                                            {copy.print[lang]}
                                         </small>
                                         <h5 className={styles.cardValue}>
                                             Full CMYK

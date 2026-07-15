@@ -1,8 +1,12 @@
 'use client'
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./BlogHeroSection.module.css";
+import { useLang } from "@/context/LanguageContext";
+import { strings } from "@/i18n/strings";
 
 export default function BlogHeroSection() {
+  const { lang } = useLang();
+
   return (
     <section id="_hero" className={styles.hero}>
 
@@ -29,7 +33,7 @@ export default function BlogHeroSection() {
             </div>
 
             <p className={styles.description}>
-              Stories from the journey · behind every page of Dear Tho
+              {strings.blog.description[lang]}
             </p>
 
             {/* Có thể thêm Button sau này */}

@@ -130,9 +130,7 @@
     Sans:    Be Vietnam Pro (Vietnamese-first sans-serif)            */
 
     /* ── Font Families ───────────────────────────────── */
-    --font-display:            '1FTV HF Gesco', 'Noto Serif', serif;
-    --font-serif:              'Noto Serif', 'Georgia', serif;
-    --font-sans:               'Be Vietnam Pro', 'Segoe UI', sans-serif;
+    /* --font-display, --font-serif, --font-sans are set on <html> by next/font in layout.tsx */
     --font-mono:               'JetBrains Mono', 'Consolas', monospace;
 
     /* ── Semantic Aliases ────────────────────────────── */

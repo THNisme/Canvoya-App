@@ -1,102 +1,296 @@
 .section {
-    padding: 96px 0;
-    background: var(--color-bg-card);
+    position: relative;
+    background: var(--color-bg-dark);
+    padding: 110px 0;
+    overflow: hidden;
 }
 
-.card {
-    border: 1px solid var(--color-border-subtle);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--color-bg-card);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--duration-normal) var(--ease-default),
-        box-shadow var(--duration-normal) var(--ease-default);
-    height: 100%;
+.glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(78, 123, 118, .25), transparent 55%);
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    max-width: 1080px;
+}
+
+.timeline {
+    position: relative;
+    margin-top: 32px;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    width: 0;
+    border-left: 2px dashed rgba(241, 229, 207, .28);
+}
+
+.row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 96px 1fr;
+    align-items: center;
+    gap: 0 24px;
+    margin-bottom: 72px;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.rowLeft .photoCol {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.rowLeft .textCol {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+}
+
+.rowRight .photoCol {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+}
+
+.rowRight .textCol {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+}
+
+.numCol {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.photoCard {
+    position: relative;
+    width: min(340px, 100%);
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform 300ms var(--ease-default);
 }
 
 @media (hover: hover) {
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-lg);
-    }
-
-    .card:hover .imagePlaceholder {
-        transform: scale(1.04);
-    }
-
-    .card:hover .index {
-        opacity: .5;
-        transform: translate(-4px, -4px);
+    .photoCard:hover {
+        transform: rotate(0deg) scale(1.03);
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .card,
-    .imagePlaceholder,
-    .index {
-        transition: none !important;
-    }
+.stampFrame {
+    width: 340px;
+    max-width: 100%;
+    background: #fdfaf3;
+    padding: 12px;
+    filter: drop-shadow(0 2px 8px rgba(90, 68, 52, .1));
+    mask: radial-gradient(6px, transparent 98%, #000) round -9px -9px / 18px 18px,
+        linear-gradient(#000 0 0) no-repeat 50% / calc(100% - 18px) calc(100% - 18px);
 }
 
-.imagePlaceholder {
+.photo {
     position: relative;
-    height: 180px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--placeholder-color, var(--color-sand)) 5%, #f7f4ed);
+}
+
+.photoImg {
+    object-fit: cover;
+    filter: sepia(.3) saturate(.85) contrast(.97);
+}
+
+.photoPlaceholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1.5px dashed rgba(90, 68, 52, .28);
+    color: rgba(90, 68, 52, .62);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 13px;
+}
+
+.placeholderIcon {
+    opacity: .5;
+}
+
+.photoPlaceholder small {
+    font-size: 11px;
+}
+
+.photoPlaceholder u {
+    text-underline-offset: 2px;
+}
+
+.photoCaption {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 2px 0;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: .16em;
+    color: var(--color-primary-dark);
+}
+
+.photoCaption span:last-child {
+    color: var(--color-text-muted);
+}
+
+.stampBadge {
+    position: absolute;
+    top: -20px;
+    right: -22px;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    border: 2px solid rgba(183, 89, 62, .55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-12deg);
+    pointer-events: none;
+}
+
+.stampBadge span {
+    font-family: var(--font-sans);
+    font-size: 8px;
+    letter-spacing: .12em;
+    color: rgba(183, 89, 62, .9);
+}
+
+.stampBadgeLine {
+    width: 34px;
+    height: 1px;
+    background: rgba(183, 89, 62, .5);
+    margin: 3px 0;
+}
+
+.num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 0 6px var(--color-bg-dark);
 
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
-
-    transition: transform var(--duration-slow) var(--ease-default);
-}
-
-.index {
-    position: absolute;
-    top: -8px;
-    left: 8px;
+    justify-content: center;
 
     font-family: var(--font-display);
-    font-size: 96px;
-    line-height: 1;
-    color: rgba(255, 255, 255, .28);
-
-    transition: transform var(--duration-slow) var(--ease-default),
-        opacity var(--duration-slow) var(--ease-default);
+    font-size: 22px;
+    color: var(--color-primary-light);
 }
 
-.englishOverlay {
-    position: relative;
-    z-index: 1;
-
-    color: white;
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-}
-
-.cardTitle {
+.name {
     font-family: var(--font-display);
-    color: var(--color-chocolate);
-    margin-bottom: 2px;
+    font-size: clamp(28px, 3vw, 36px);
+    color: var(--color-cream);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    text-wrap: balance;
 }
 
-.cardSub {
-    color: var(--color-text-muted);
-    display: block;
-    margin-bottom: 12px;
-}
-
-.cardText {
+.desc {
     font-family: var(--font-serif);
-    color: var(--color-text-secondary);
+    font-size: var(--text-md);
+    color: rgba(241, 229, 207, .75);
     line-height: 1.7;
+    margin: 0;
+    text-wrap: pretty;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
     .section {
         padding: 72px 0;
+    }
+
+    .timelineLine {
+        top: 0;
+        bottom: 0;
+        left: 26px;
+    }
+
+    .row {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 24px;
+        margin-bottom: 64px;
+    }
+
+    .rowLeft .photoCol,
+    .rowRight .photoCol {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .numCol {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .rowLeft .textCol,
+    .rowRight .textCol {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .timeline {
+        margin-top: 8px;
+    }
+
+    .timelineLine {
+        display: none;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 56px;
+    }
+
+    .rowLeft .photoCol,
+    .rowRight .photoCol {
+        order: 1;
+        width: calc(100% - 26px);
+    }
+
+    .numCol {
+        order: 2;
+    }
+
+    .rowLeft .textCol,
+    .rowRight .textCol {
+        order: 3;
+        padding: 0;
+        text-align: center;
+    }
+
+    .stampBadge {
+        right: -14px;
     }
 }

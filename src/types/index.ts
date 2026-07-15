@@ -10,24 +10,33 @@ export interface Blog {
   content: string;
 }
 
+export type Lang = 'vi' | 'en';
+
+export interface Localized {
+  vi: string;
+  en: string;
+}
+
 export interface TeamMember {
   id: number;
   name: string;
-  role: string;
-  quote: string;
+  role: Localized;
+  quote: Localized;
   initials: string;
   accentColor: string;
+  photo: string;
 }
 
 export interface FaqItem {
   id: number;
-  question: string;
-  answer: string;
+  question: Localized;
+  answer: Localized;
 }
 
 export interface Landmark {
-  title: string;
-  english: string;
-  description: string;
+  viName: string;
+  enName: string;
+  description: Localized;
   color: string;
+  photo?: string;
 }

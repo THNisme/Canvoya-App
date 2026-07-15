@@ -36,6 +36,18 @@
     color: var(--color-text-muted);
 }
 
+.dark .eyebrow {
+    color: var(--color-primary-light);
+}
+
+.dark .title {
+    color: var(--color-cream);
+}
+
+.dark .description {
+    color: rgba(241, 229, 207, .55);
+}
+
 @media (max-width: 768px) {
     .title {
         font-size: var(--text-3xl);

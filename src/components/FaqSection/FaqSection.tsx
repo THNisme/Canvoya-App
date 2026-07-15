@@ -6,18 +6,21 @@ import styles from './FaqSection.module.css';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import { faqs } from '@/data/faq';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useLang } from '@/context/LanguageContext';
+import { strings } from '@/i18n/strings';
 
 export default function FaqSection() {
   const sectionRef = useRef<HTMLElement>(null);
   useScrollReveal(sectionRef);
+  const { lang } = useLang();
 
   return (
     <section id="_faq" className={styles.section} ref={sectionRef}>
       <Container>
         <SectionHeader
-          eyebrow="Hỏi & Đáp"
-          title="Câu hỏi thường gặp"
-          description="Everything you need to know about Dear Tho"
+          eyebrow={strings.faq.eyebrow[lang]}
+          title={strings.faq.title[lang]}
+          description={strings.faq.subtitle[lang]}
         />
 
         <Row className="justify-content-center">
@@ -29,8 +32,8 @@ export default function FaqSection() {
                   key={item.id}
                   className={styles.item}
                 >
-                  <Accordion.Header>{item.question}</Accordion.Header>
-                  <Accordion.Body>{item.answer}</Accordion.Body>
+                  <Accordion.Header>{item.question[lang]}</Accordion.Header>
+                  <Accordion.Body>{item.answer[lang]}</Accordion.Body>
                 </Accordion.Item>
               ))}
             </Accordion>

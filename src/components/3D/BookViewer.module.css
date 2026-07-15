@@ -1,0 +1,11 @@
+.canvas {
+  width: 100%;
+  height: clamp(360px, 45vw, 500px);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.canvas:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
