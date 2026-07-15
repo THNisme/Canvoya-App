@@ -4,7 +4,7 @@ import { useTexture } from "@react-three/drei";
 
 export default function BackCover(){
 
-    const texture=useTexture("/textures/back.jpg");
+    const texture=useTexture("/textures/back.png");
 
     return(
 

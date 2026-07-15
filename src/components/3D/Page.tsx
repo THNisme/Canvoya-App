@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import { useMemo } from "react";
 import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
@@ -12,8 +11,8 @@ export default function Page({
     position = [0, 0, 0]
 }: PageProps) {
 
-    const frontTexture = useTexture("/textures/page-filled.jpg");
-    const backTexture = useTexture("/textures/page-blank.jpg")
+    const frontTexture = useTexture("/textures/page1.png");
+    const backTexture = useTexture("/textures/page2.png");
 
     const geometry = useMemo(()=>{
         const geo = new THREE.PlaneGeometry(2, 3, 40, 40);
