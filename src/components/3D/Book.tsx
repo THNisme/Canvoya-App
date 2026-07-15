@@ -22,10 +22,8 @@ export default function Book() {
 
     // Animation của bìa
     const coverSpring = useSpring({
-        rotation: step >= 1 
-        ? [0, COVER_OPEN_ANGLE, 0] 
-        : [0, 0, 0], 
-        config: { 
+        rotationY: step >= 1 ? COVER_OPEN_ANGLE : 0,
+        config: {
             mass: 1, 
             tension: 100, 
             friction: 30, 
@@ -33,11 +31,9 @@ export default function Book() {
     });
 
     // Animation của trang
-    const pageSpring = useSpring({ 
-        rotation: step >= 2 
-        ? [0, PAGE_OPEN_ANGLE, 0] 
-        : [0, 0, 0], 
-        config: { 
+    const pageSpring = useSpring({
+        rotationY: step >= 2 ? PAGE_OPEN_ANGLE : 0,
+        config: {
             mass: 0.2, 
             tension: 180, 
             friction: 30, 
@@ -73,7 +69,7 @@ export default function Book() {
 
             <animated.group
                 position={[-1,0,COVER_Z]}
-                rotation={coverSpring.rotation}
+                rotation-y={coverSpring.rotationY}
             >
                 <Cover/>
             </animated.group>
@@ -82,7 +78,7 @@ export default function Book() {
 
             <animated.group
                 position={[-1,0,PAGE_Z]}
-                rotation={pageSpring.rotation}
+                rotation-y={pageSpring.rotationY}
             >
                 <Page/>
             </animated.group>

@@ -3,8 +3,9 @@
 import { Carousel, Container, Row, Col, Badge } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./BlogHeroSlider.module.css";
+import type { Blog } from "@/types";
 
-export default function BlogHeroSlider({ blogs }) {
+export default function BlogHeroSlider({ blogs }: { blogs: Blog[] }) {
     return (
         <section className={styles.blogHero}>
             <Container>

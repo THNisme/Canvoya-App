@@ -1,4 +1,6 @@
-export const blogs = [
+import type { Blog } from "@/types";
+
+export const blogs: Blog[] = [
     {
         id: 1,
         slug: "15-06",

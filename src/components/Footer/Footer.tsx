@@ -29,15 +29,18 @@ const Footer = () => {
             <h6 className={styles.heading}>Sản phẩm</h6>
 
             <Nav className="flex-column">
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link href="/#_product" className={styles.link}>
                 Dear Tho
               </Nav.Link>
 
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link
+                href="https://forms.gle/LT9nve8Lb1GaCmS76"
+                className={styles.link}
+              >
                 Đặt hàng
               </Nav.Link>
 
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link href="/#_faq" className={styles.link}>
                 Câu hỏi thường gặp
               </Nav.Link>
             </Nav>
@@ -48,20 +51,19 @@ const Footer = () => {
             <h6 className={styles.heading}>Về chúng tôi</h6>
 
             <Nav className="flex-column">
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link href="/#_about" className={styles.link}>
                 Đội ngũ
               </Nav.Link>
 
-              <Nav.Link href="#" className={styles.link}>
+              <Nav.Link
+                href="https://www.facebook.com/canvoya"
+                className={styles.link}
+              >
                 Liên hệ
               </Nav.Link>
 
               <Nav.Link href="https://www.facebook.com/canvoya" className={styles.link}>
                 Facebook
-              </Nav.Link>
-
-              <Nav.Link href="#" className={styles.link}>
-                Instagram
               </Nav.Link>
             </Nav>
           </Col>
