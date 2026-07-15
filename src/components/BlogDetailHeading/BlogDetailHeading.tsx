@@ -1,8 +1,9 @@
 'use client'
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./BlogDetailHeading.module.css";
+import type { Blog } from "@/types";
 
-export default function BlogDetailHeading({blog}) {
+export default function BlogDetailHeading({ blog }: { blog: Blog }) {
   return (
     <section id="_hero" className={styles.hero}>
 

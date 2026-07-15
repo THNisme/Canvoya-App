@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
 
     display: flex;
     align-items: center;
@@ -8,7 +8,19 @@
 
     overflow: hidden;
 
-    background: var(--color-bg-rich);
+    background: radial-gradient(
+        ellipse at center,
+        var(--color-chocolate-light) 0%,
+        var(--color-bg-rich) 65%,
+        #241a11 100%
+    );
+}
+
+.particles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .overlay {
@@ -97,8 +109,79 @@
 .actions {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+.primaryBtn {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: .04em;
+
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-text-on-primary);
+
+    transition: transform var(--duration-normal) var(--ease-default),
+        box-shadow var(--duration-normal) var(--ease-default),
+        background var(--duration-normal) var(--ease-default);
+}
+
+.primaryBtn:hover,
+.primaryBtn:focus {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.secondaryBtn {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: .04em;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+
+    background: transparent;
+    border: 1px solid rgba(241, 229, 207, .4);
+    color: var(--color-cream);
+    text-decoration: none;
+
+    transition: transform var(--duration-normal) var(--ease-default),
+        border-color var(--duration-normal) var(--ease-default),
+        background var(--duration-normal) var(--ease-default);
+}
+
+.secondaryBtn:hover,
+.secondaryBtn:focus {
+    background: rgba(241, 229, 207, .1);
+    border-color: var(--color-cream);
+    color: var(--color-cream);
+    transform: translateY(-2px);
+}
+
+@media (hover: none) {
+    .primaryBtn:hover,
+    .secondaryBtn:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .primaryBtn:hover,
+    .secondaryBtn:hover {
+        transform: none;
+    }
 }
 
 @media (max-width: 768px) {

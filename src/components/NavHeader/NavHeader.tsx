@@ -4,7 +4,6 @@ import {
     Navbar,
     Container,
     Nav,
-    Button,
 } from "react-bootstrap";
 import { HiShoppingBag } from "react-icons/hi2";
 import styles from './NavHeader.module.css';
@@ -13,14 +12,14 @@ function NavHeader() {
     return (
         <Navbar expand="lg" sticky="top" className={styles.navbar}>
             <Container>
-                <Navbar.Brand className={styles.logo} as={Link} href="/">
+                <Link className={styles.logo} href="/">
                     CANVOYA
-                </Navbar.Brand>
+                </Link>
 
                 <div className="d-flex align-items-center">
-                    <Button variant="link" className={styles.navTranslate}>VIE</Button>
+                    <button type="button" className={styles.navTranslate}>VIE</button>
                     <span>|</span>
-                    <Button variant="link" className={styles.navTranslate}>EN</Button>
+                    <button type="button" className={styles.navTranslate}>EN</button>
                 </div>
 
                 <Navbar.Toggle aria-controls="main-navbar" />
@@ -28,17 +27,21 @@ function NavHeader() {
                 <Navbar.Collapse id="main-navbar">
 
                     <Nav className="mx-auto gap-4">
-                        <Nav.Link className={styles.navLink} as={Link} href="/#_hero">HOME</Nav.Link>
-                        <Nav.Link className={styles.navLink} as={Link} href="/#_product">THE BOOK</Nav.Link>
-                        <Nav.Link className={styles.navLink} as={Link} href="/#_destination">DESTINATION</Nav.Link>
-                        <Nav.Link className={styles.navLink} as={Link} href="/blog">BLOG</Nav.Link>
+                        <Nav.Link className={styles.navLink} href="/#_hero">HOME</Nav.Link>
+                        <Nav.Link className={styles.navLink} href="/#_product">THE BOOK</Nav.Link>
+                        <Nav.Link className={styles.navLink} href="/#_destination">DESTINATION</Nav.Link>
+                        <Nav.Link className={styles.navLink} href="/#_about">ABOUT</Nav.Link>
+                        <Nav.Link className={styles.navLink} href="/blog">BLOG</Nav.Link>
                     </Nav>
 
                     <div className="d-flex align-items-center">
-                        <Button className={`d-none d-lg-inline-block ${styles.navBuyBtn}`} as={Link} href="https://forms.gle/LT9nve8Lb1GaCmS76">
+                        <a
+                            className={`d-none d-lg-inline-block ${styles.navBuyBtn}`}
+                            href="https://forms.gle/LT9nve8Lb1GaCmS76"
+                        >
                             <span>MUA NGAY</span>
                             <span><HiShoppingBag/></span>
-                        </Button>
+                        </a>
                     </div>
 
                 </Navbar.Collapse>

@@ -1,11 +1,17 @@
-'use client'
+'use client';
+
+import { useRef } from 'react';
 import { Container, Row, Col, Card } from "react-bootstrap";
 import styles from "./ProductSection.module.css";
 import BookViewer from "../3D/BookViewer";
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function ProductSection() {
+    const sectionRef = useRef<HTMLElement>(null);
+    useScrollReveal(sectionRef, { start: 'top 75%' });
+
     return (
-        <section id="_product" className={styles.section}>
+        <section id="_product" className={styles.section} ref={sectionRef}>
             <Container>
 
                 <Row className="align-items-center g-5">
@@ -13,27 +19,27 @@ export default function ProductSection() {
                     {/* Nội dung */}
                     <Col lg={6}>
 
-                        <p className={styles.subtitle}>
+                        <p className={styles.subtitle} data-reveal>
                             Về sản phẩm
                         </p>
 
-                        <h2 className={styles.title}>
+                        <h2 className={styles.title} data-reveal>
                             Hơn cả một cuốn sách
                         </h2>
 
-                        <p className={styles.description}>
+                        <p className={styles.description} data-reveal>
                             Dear Tho is more than a collection of photos and facts
                             — it is a personal keepsake for your travel memories,
                             designed to create a deeply interactive experience.
                         </p>
 
-                        <p className={styles.highlight}>
+                        <p className={styles.highlight} data-reveal>
                             Sách bao gồm hình ảnh đẹp, thông tin lịch sử, không gian
                             viết nhật ký, túi nhựa trong để lưu ảnh cá nhân và các
                             trò chơi tương tác.
                         </p>
 
-                        <Row className="g-3">
+                        <Row className="g-3" data-reveal>
 
                             <Col xs={6}>
                                 <Card className={styles.infoCard}>
@@ -93,7 +99,7 @@ export default function ProductSection() {
 
                     {/* Hình ảnh */}
                     <Col lg={6}>
-                        <div className={styles.bookPreview}>
+                        <div className={styles.bookPreview} data-reveal>
                             <BookViewer/>
                         </div>
                     </Col>

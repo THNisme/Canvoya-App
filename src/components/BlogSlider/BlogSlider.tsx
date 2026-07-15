@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 
 import "swiper/css";
@@ -11,12 +12,17 @@ import "swiper/css/pagination";
 import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
 import styles from "./BlogSlider.module.css"
+import type { Blog } from "@/types";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-export default function BlogSlider({ blogs }) {
+export default function BlogSlider({ blogs }: { blogs: Blog[] }) {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    useScrollReveal(sectionRef);
+
     return (
-        <Container >
+        <Container ref={sectionRef}>
             <div className={styles.blogSliderContainer}>
-                <div className="text-center mb-5">
+                <div className="text-center mb-5" data-reveal>
                     <p className={styles.subtitle}>BLOG CANVOYA</p>
 
                     <h2 className={styles.title}>
