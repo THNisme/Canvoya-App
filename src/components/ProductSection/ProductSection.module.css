@@ -40,6 +40,7 @@
 
 .infoCard {
     border: none;
+    border-top: 2px solid var(--color-primary);
     border-radius: var(--radius-md);
     background: var(--color-bg-card);
     box-shadow: var(--shadow-sm);
@@ -71,6 +72,7 @@
     justify-content: center;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+    overflow: hidden;
 }
 
 @media (max-width: 991px) {

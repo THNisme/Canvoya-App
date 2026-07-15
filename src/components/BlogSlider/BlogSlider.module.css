@@ -3,23 +3,32 @@
 }
 
 .blogSlider {
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
     padding-bottom: var(--section-gap);
 }
 
 .blogCard{
+    display: flex;
+    height: 100%;
     width: 100%;
-    max-height: fit-content;
-    border-radius:16px;
-    overflow:hidden;
-    transition:.3s;
+    min-height: 456px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform var(--duration-slow) var(--ease-out), box-shadow var(--duration-slow) var(--ease-out);
+}
+
+.blogImageWrap {
+    position: relative;
+    display: block;
+    height: 230px;
+    overflow: hidden;
 }
 
 .blogImage{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    cursor:pointer;
-    transition:.3s;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out);
 }
 
 .blogImage:hover{
@@ -27,9 +36,16 @@
 }
 
 .blogTitle{
-    font-size:1.2rem;
-    font-weight:600;
-    margin-bottom:6px;
+    min-height: 4.05em;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.35;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .blogTitle a{
@@ -43,21 +59,35 @@
 }
 
 .blogCard .cardDescription{
-    font-size:.95rem;
-    line-height:1.6;
-    color:#666;
+    margin: 0;
+    font-size: .95rem;
+    line-height: 1.6;
+    color: #666;
 
-    /* Chỉ hiện 1 dòng */
-    display:-webkit-box;
-    -webkit-line-clamp:1;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blogBody {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px 20px 20px;
+}
+
+.blogCategory {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
+    color: var(--color-text-muted);
 }
 
 @media (hover: hover) {
     .blogCard:hover{
-        transform:translateY(-8px);
-        box-shadow:0 15px 35px rgba(0,0,0,.15)!important;
+        transform:translateY(-6px);
+        box-shadow:0 8px 8px rgba(90,68,52,.16)!important;
     }
 }
 
@@ -94,4 +124,17 @@
     font-size: var(--text-md);
     font-style: italic;
     color: var(--color-text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+    text-wrap: pretty;
+}
+
+@media (max-width: 767px) {
+    .blogCard {
+        min-height: 430px;
+    }
+
+    .blogTitle {
+        min-height: auto;
+    }
 }

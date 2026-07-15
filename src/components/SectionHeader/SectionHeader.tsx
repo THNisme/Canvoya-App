@@ -5,6 +5,7 @@ interface SectionHeaderProps {
   title: string;
   description?: string;
   align?: 'center' | 'left';
+  variant?: 'light' | 'dark';
 }
 
 export default function SectionHeader({
@@ -12,10 +13,13 @@ export default function SectionHeader({
   title,
   description,
   align = 'center',
+  variant = 'light',
 }: SectionHeaderProps) {
   return (
     <div
-      className={`${styles.header} ${align === 'left' ? styles.left : styles.center}`}
+      className={`${styles.header} ${align === 'left' ? styles.left : styles.center} ${
+        variant === 'dark' ? styles.dark : ''
+      }`}
       data-reveal
     >
       <p className={styles.eyebrow}>{eyebrow}</p>

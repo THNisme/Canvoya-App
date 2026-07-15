@@ -1,8 +1,12 @@
 'use client'
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import styles from "./Footer.module.css";
+import { useLang } from '@/context/LanguageContext';
+import { strings } from '@/i18n/strings';
 
 const Footer = () => {
+  const { lang } = useLang();
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -14,19 +18,17 @@ const Footer = () => {
             <h3 className={styles.logo}>Canvoya</h3>
 
             <p className={styles.tagline}>
-              Chạm vào trang sách, chạm lại chuyến đi.
-              <br />
-              Touch the pages, touch the journey again.
+              {strings.footer.tagline[lang]}
             </p>
 
             <p className={styles.caption}>
-              A project by FPT University students for the EXE course.
+              {strings.footer.caption[lang]}
             </p>
           </Col>
 
           {/* Product */}
           <Col lg={3} md={6}>
-            <h6 className={styles.heading}>Sản phẩm</h6>
+            <h6 className={styles.heading}>{strings.footer.productHeading[lang]}</h6>
 
             <Nav className="flex-column">
               <Nav.Link href="/#_product" className={styles.link}>
@@ -37,33 +39,33 @@ const Footer = () => {
                 href="https://forms.gle/LT9nve8Lb1GaCmS76"
                 className={styles.link}
               >
-                Đặt hàng
+                {strings.footer.linkOrder[lang]}
               </Nav.Link>
 
               <Nav.Link href="/#_faq" className={styles.link}>
-                Câu hỏi thường gặp
+                {strings.footer.linkFaq[lang]}
               </Nav.Link>
             </Nav>
           </Col>
 
           {/* About */}
           <Col lg={3} md={6}>
-            <h6 className={styles.heading}>Về chúng tôi</h6>
+            <h6 className={styles.heading}>{strings.footer.aboutHeading[lang]}</h6>
 
             <Nav className="flex-column">
               <Nav.Link href="/#_about" className={styles.link}>
-                Đội ngũ
+                {strings.footer.linkTeam[lang]}
               </Nav.Link>
 
               <Nav.Link
                 href="https://www.facebook.com/canvoya"
                 className={styles.link}
               >
-                Liên hệ
+                Facebook
               </Nav.Link>
 
-              <Nav.Link href="https://www.facebook.com/canvoya" className={styles.link}>
-                Facebook
+              <Nav.Link href="/blog" className={styles.link}>
+                {strings.nav.blog[lang]}
               </Nav.Link>
             </Nav>
           </Col>
@@ -73,8 +75,8 @@ const Footer = () => {
         <hr className={styles.divider} />
 
         <div className={styles.bottom}>
-          <span>© 2026 Canvoya. All rights reserved.</span>
-          <span>Made with care in Cần Thơ</span>
+          <span>{lang === 'vi' ? '© 2026 Canvoya. Đã đăng ký bản quyền.' : '© 2026 Canvoya. All rights reserved.'}</span>
+          <span>{strings.footer.madeIn[lang]}</span>
         </div>
 
       </Container>
